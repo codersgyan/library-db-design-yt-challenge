@@ -1,7 +1,5 @@
 # 📘 SQL Query Challenges — Book Management System
 
-## **SQL practice challenges**
-
 | #  | Challenge & Input/Condition | Difficulty |
 |----|----------------------------|-----------|
 | 1  | Get all books written by a given author (`author_id`) | 🟢 Easy |
