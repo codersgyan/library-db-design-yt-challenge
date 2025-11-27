@@ -111,3 +111,75 @@ Focus on understanding how tables relate.
 Aim for a clean, normalized database structure.
 
 Good luck! 🚀
+
+---
+
+## **🛠️ Installation & Setup**
+
+This section explains how to set up the database and seed it with sample data using SQLite.
+
+### **Prerequisites**
+
+- SQLite3 installed on your system
+  - **Mac/Linux**: Usually pre-installed. Check with `sqlite3 --version`
+  - **Windows**: Download from [sqlite.org](https://www.sqlite.org/download.html)
+
+### **Setup Instructions**
+
+1. **Create the database and tables**
+
+   ```bash
+   sqlite3 library.db < tables.sql
+   ```
+
+   This creates a new SQLite database file named `library.db` and sets up all the required tables (authors, books, book_authors, borrowers, borrow_records).
+
+2. **Seed the database with sample data**
+
+   ```bash
+   sqlite3 library.db < seed.sql
+   ```
+
+   This populates the database with sample data including 7 authors, 25 books, 6 borrowers, and 10 borrow records.
+
+3. **Verify the setup**
+
+   Open the database and check the data:
+
+   ```bash
+   sqlite3 library.db
+   ```
+
+   Then run some queries:
+
+   ```sql
+   -- Check authors
+   SELECT * FROM authors;
+
+   -- Check books
+   SELECT * FROM books LIMIT 5;
+
+   -- Check borrow records
+   SELECT * FROM borrow_records;
+
+   -- Exit SQLite
+   .quit
+   ```
+
+### **Alternative: All-in-One Setup**
+
+You can also combine both steps into one command:
+
+```bash
+sqlite3 library.db < tables.sql && sqlite3 library.db < seed.sql
+```
+
+### **Reset the Database**
+
+To start fresh, simply delete the database file and recreate it:
+
+```bash
+rm library.db
+sqlite3 library.db < tables.sql
+sqlite3 library.db < seed.sql
+```
